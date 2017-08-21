@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+html::before {
+    content: '';
+    width: 100%;
+    height: 100vh;
+    background: url(img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 100px;
+    background: url(img/background.jpg) no-repeat center top fixed;
+    background-size: cover;
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
+    top: 0;
+    left: 0;
+}
+
+
+body {
+    max-width: 700px;
+    margin: 0 auto 120px auto;  
+    font-family: 'Press Start 2P', cursive;    
+    line-height: 1.5em;
+}
+
+.page-wrapper {
+    margin: 0 5px;
+}
+
+.intro header{
+    margin-top: 100px;
+    text-align: center;
+    overflow: hidden;
+}
+.intro header h1::before {
+    content: '8-bit ';
+}
+.intro header h1 {
+    font-size: 2rem;    
+}
+.intro header h2::before,
+.intro header h2::after
+ {
+    content: ' ';
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background-image: url(img/mario.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.intro header h2 {
+    font-size: 1.5rem;    
+    animation: scroll-left 10s linear infinite;
+}
+@media (max-width: 400px) {
+    .intro header h1 {
+        font-size: 1.5rem;    
+    }
+    .intro header h2 {
+        font-size: 1.2rem;    
+        animation: scroll-left 10s linear infinite;
+    }
+}  
+
+@keyframes scroll-left {
+    0% { 
+        transform: translateX(100%); 
+    }
+    100% { 
+        transform: translateX(-100%); 
+    }
+}
+
+h3::before {
+    content: '>_ ';
+}
+h3 {
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {  
+    10% { opacity: 0; }
+}
